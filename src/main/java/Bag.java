@@ -99,8 +99,8 @@ public abstract class Bag {
      */
     public String popItem(){
         if(this.numberOfContents > 0){
-            String output = this.contents[this.numberOfContents-1];
-            this.contents[this.numberOfContents-1] = null ;
+            String output = this.contents[this.getNumberOfContents() -1];
+            this.contents[this.getNumberOfContents() -1] = null ;
             this.numberOfContents--;
             return output;
         }
