@@ -38,8 +38,8 @@ class BagMain {
     public static int countCrossbodyStraps(Bag[] bags) {
         // TODO: Implement this.
         int j = 0;
-        for(int i =0; i< bags.length; i++){
-            j = j + ((CrossbodyBag) bags[i]).numberOfStraps;
+        for(bag: bags){
+            j += (CrossbodyBag) bag.getNumberOfStraps;
         }
         return j;
     }
