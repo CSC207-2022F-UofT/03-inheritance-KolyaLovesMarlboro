@@ -98,9 +98,9 @@ public abstract class Bag {
      * @return
      */
     public String popItem(){
-        if(this.numberOfContents > 0){
-            String output = this.contents[this.getNumberOfContents() ];
-            this.contents[this.getNumberOfContents() ] = null ;
+        if(this.getNumberOfContents() > 0){
+            String output = this.contents[this.getNumberOfContents() -1];
+            this.contents[this.getNumberOfContents() -1] = null ;
             this.numberOfContents--;
             return output;
         }
