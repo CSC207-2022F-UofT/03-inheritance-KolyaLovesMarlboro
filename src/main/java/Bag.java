@@ -4,7 +4,7 @@
  * the TODOs we have left you. You may find the readings in chapter
  * 1. Introduction to Java helpful.
  */
-
+import java.util.ArrayList;
 public abstract class Bag {
     /*
      * TODO: Create the following private instance variables
@@ -16,7 +16,7 @@ public abstract class Bag {
     private String color;
     private int numberOfContents = 0;
     private int capacity = 0;
-    private String[] contents;
+    private ArrayList<String> contents = new ArrayList<String>();
 
 
 
@@ -77,7 +77,7 @@ public abstract class Bag {
      */
     public boolean addItem ( String newItem){
         if(this.getNumberOfContents() < this.getCapacity()) {
-            this.contents[this.getNumberOfContents()] = newItem;
+            this.contents.add(newItem);
             this.numberOfContents++;
             return true;
         }else{
@@ -100,8 +100,8 @@ public abstract class Bag {
      */
     public String popItem(){
         if(this.getNumberOfContents() > 0){
-            String output = this.contents[this.getNumberOfContents() - 1];
-            this.contents[this.getNumberOfContents() - 1] = null;
+            String output = this.contents.get(this.getNumberOfContents() - 1);
+            this.contents.remove(this.getNumberOfContents() -1);
             this.numberOfContents--;
             return output;}
         return null;
