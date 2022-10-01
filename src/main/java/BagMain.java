@@ -38,7 +38,9 @@ class BagMain {
         // TODO: Implement this.
         int j = 0;
         for( Bag bag: bags){
-            j += ((CrossbodyBag) bag).getNumberOfStraps();
+            if(bag instanceof CrossbodyBag){
+                j+= ((CrossbodyBag) bag).getNumberOfStraps();
+            }
         }
         return j;
     }
