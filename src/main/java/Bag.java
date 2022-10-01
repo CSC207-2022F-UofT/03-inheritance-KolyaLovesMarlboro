@@ -76,12 +76,13 @@ public abstract class Bag {
      *       and false otherwise.
      */
     public boolean addItem ( String newItem){
-        if(this.getNumberOfContents() < this.getCapacity()){
-            this.contents[this.numberOfContents] = newItem;
+        if(this.getNumberOfContents() < this.getCapacity()) {
+            this.contents[this.getNumberOfContents()] = newItem;
             this.numberOfContents++;
             return true;
+        }else{
+            return false;
         }
-        return false;
     }
 
 
@@ -98,12 +99,10 @@ public abstract class Bag {
      * @return
      */
     public String popItem(){
-        if(this.getNumberOfContents() > 0) {
             String output = this.contents[this.getNumberOfContents() - 1];
             this.contents[this.getNumberOfContents() - 1] = null;
             this.numberOfContents--;
             return output;
-        }
     }
 
 
@@ -129,8 +128,8 @@ public abstract class Bag {
      */
     @Override
     public String toString() {
-        return this.color + " Bag (" + this.numberOfContents + " / " +
-                this.capacity + ")";
+        return this.getColor() + " Bag (" + this.getNumberOfContents() + " / " +
+                this.getCapacity() + ")";
     }
 
     /*
